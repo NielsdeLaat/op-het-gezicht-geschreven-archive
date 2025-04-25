@@ -1,4 +1,6 @@
-# Op het gezicht geschreven?
+# Op het gezicht geschreven? - ARCHIVE
+
+## This version of the project does not work and I have chosen to start again. You can find the new project here:
 
 An interactive installation prototype that visualizes the invisible inner world of people to evoke empathy and reflection.
 
