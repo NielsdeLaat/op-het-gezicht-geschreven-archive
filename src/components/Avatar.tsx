@@ -15,14 +15,21 @@ const Avatar: FC<AvatarProps> = ({ id, imageUrl, isSelected, onClick }) => {
         isSelected ? "scale-110" : "hover:scale-105"
       }`}
       onClick={onClick}
+      style={{ backgroundColor: "transparent" }}
     >
-      <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden">
+      <div className="relative bg-transparent">
         <Image
           src={imageUrl}
           alt={`Avatar ${id}`}
-          fill
-          className="object-cover"
+          width={1000}
+          height={400}
+          className="bg-transparent"
           priority
+          style={{
+            backgroundColor: "transparent",
+            width: "auto",
+            height: "auto",
+          }}
         />
       </div>
     </div>
