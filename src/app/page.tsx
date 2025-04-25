@@ -46,10 +46,19 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
-      <div className="max-w-6xl mx-auto">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 flex items-center justify-center overflow-hidden">
+      <div
+        className="max-w-6xl w-full h-screen overflow-hidden"
+        style={{
+          transform: "rotate(-90deg)",
+          transformOrigin: "center center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         {selectedAvatar === null ? (
-          <div className="flex justify-center items-center space-x-12 py-20 overflow-hidden">
+          <div className="flex flex-col space-y-12 py-20">
             {avatars.map((avatar) => (
               <div
                 key={avatar.id}
@@ -65,13 +74,15 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className="relative flex flex-col items-center">
-            <button
-              onClick={() => setSelectedAvatar(null)}
-              className="absolute top-4 left-4 px-4 py-2 text-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-md hover:bg-white dark:hover:bg-gray-800 transition-colors"
-            >
-              ← Back
-            </button>
+          <div className="relative flex flex-col items-center w-full max-w-2xl mx-auto">
+            <div className="absolute -left-8 -top-8">
+              <button
+                onClick={() => setSelectedAvatar(null)}
+                className="px-4 py-2 text-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-md hover:bg-white dark:hover:bg-gray-800 transition-colors"
+              >
+                ← Back
+              </button>
+            </div>
             <div className="relative mt-20">
               {avatars
                 .filter((avatar) => avatar.id === selectedAvatar)
